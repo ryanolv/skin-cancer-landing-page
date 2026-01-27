@@ -24,11 +24,12 @@ export function HeroSection() {
             </p>
             
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Button size="lg" className="gap-2 text-base px-8">
+              <Button size="lg" className="gap-2 text-base cursor-pointer px-8">
                 <Monitor className="h-5 w-5" />
                 Sou Médico
+
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 text-base px-8 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground bg-transparent">
+              <Button size="lg" variant="outline" className="gap-2 cursor-pointer text-base px-8 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground bg-transparent">
                 <Smartphone className="h-5 w-5" />
                 Sou Paciente
               </Button>

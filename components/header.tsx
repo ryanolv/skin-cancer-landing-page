@@ -40,10 +40,10 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm">
+          <Button variant="ghost" size="sm" className="cursor-pointer hover:bg-secondary">
             Sou Paciente
           </Button>
-          <Button size="sm">
+          <Button size="sm" className="cursor-pointer">
             Sou Médico
           </Button>
         </div>
