@@ -34,11 +34,11 @@ export function Footer() {
           <div className="flex flex-col items-center lg:items-end gap-3">
             <p className="text-sm text-background/60 uppercase tracking-wider">Contato</p>
             <a 
-              href="mailto:teste@teste.com" 
+              href="mailto:ryan.oliveira@dcomp.ufs.br" 
               className="flex items-center gap-2 text-background hover:text-primary transition-colors"
             >
               <Mail className="h-5 w-5" />
-              <span>teste@teste.com</span>
+              <span>ryan.oliveira@dcomp.ufs.br</span>
             </a>
           </div>
         </div>
