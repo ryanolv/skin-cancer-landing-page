@@ -1,4 +1,5 @@
 import { Mail, GraduationCap } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -8,10 +9,13 @@ export function Footer() {
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                <span className="text-xl font-bold">S</span>
-              </div>
-              <span className="text-xl font-bold">SkinCancer</span>
+              <Image
+                src="/images/logo-white.png"
+                alt="SkinCancer Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-sm text-background/70 max-w-xs">
               Tecnologia digital como apoio aos cuidados com a saúde da pele.
@@ -33,8 +37,8 @@ export function Footer() {
           {/* Contact */}
           <div className="flex flex-col items-center lg:items-end gap-3">
             <p className="text-sm text-background/60 uppercase tracking-wider">Contato</p>
-            <a 
-              href="mailto:ryan.oliveira@dcomp.ufs.br" 
+            <a
+              href="mailto:ryan.oliveira@dcomp.ufs.br"
               className="flex items-center gap-2 text-background hover:text-primary transition-colors"
             >
               <Mail className="h-5 w-5" />
