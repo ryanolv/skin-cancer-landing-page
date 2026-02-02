@@ -1,9 +1,12 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { Smartphone, Monitor } from "lucide-react"
-import Link from "next/link"
+import { MessageCircle } from "lucide-react"
 import Image from "next/image"
+import { useContactSpecialist } from "@/components/contact-specialist-dialog"
 
 export function HeroSection() {
+  const { openDialog } = useContactSpecialist()
   return (
     <section className="relative overflow-hidden bg-background py-20 lg:py-32">
       {/* Background gradient decoration */}
@@ -26,23 +29,19 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Button size="lg" className="gap-2 text-base cursor-pointer px-8 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all" asChild>
-                <Link href="#medico">
-                  <Monitor className="h-5 w-5" />
-                  Sou Médico
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="gap-2 cursor-pointer text-base px-8 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground bg-transparent shadow-sm hover:shadow-md transition-all" asChild>
-                <Link href="#paciente">
-                  <Smartphone className="h-5 w-5" />
-                  Sou Paciente
-                </Link>
+              <Button
+                size="lg"
+                className="gap-2 text-base cursor-pointer px-8 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all"
+                onClick={openDialog}
+              >
+                <MessageCircle className="h-5 w-5" />
+                Falar com especialista
               </Button>
             </div>
           </div>
 
           {/* Mockup Visual */}
-          <div className="relative flex justify-center items-center">
+          <div className="relative flex justify-center items-center" id="#medico">
             <div className="relative w-full max-w-3xl aspect-[16/9] transform transition-transform duration-500 hover:scale-[1.02]">
               <Image
                 src="/images/plataforms.png"

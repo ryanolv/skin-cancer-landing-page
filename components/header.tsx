@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useContactSpecialist } from "@/components/contact-specialist-dialog"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { openDialog } = useContactSpecialist()
 
   const navLinks = [
     { label: "Produto", href: "#produto" },
@@ -43,16 +45,6 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="cursor-pointer hover:bg-secondary" asChild>
-            <Link href="#paciente">Sou Paciente</Link>
-          </Button>
-          <Button size="sm" className="cursor-pointer" asChild>
-            <Link href="#medico">Sou Médico</Link>
-          </Button>
-        </div>
-
         {/* Mobile Menu Button */}
         <Button
           variant="ghost"
@@ -79,14 +71,6 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <div className="flex flex-col gap-2 pt-4 border-t border-border">
-              <Button variant="outline" className="w-full bg-transparent" asChild>
-                <Link href="#paciente">Sou Paciente</Link>
-              </Button>
-              <Button className="w-full" asChild>
-                <Link href="#medico">Sou Médico</Link>
-              </Button>
-            </div>
           </nav>
         </div>
       )}
